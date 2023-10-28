@@ -1,6 +1,7 @@
 package com.practice.calculator.dto;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -38,7 +39,7 @@ public class CalculatorResponseDTO {
   private Float result;
 
   @JsonProperty("execution_time")
-  private Timestamp execution_time;
+  private LocalDateTime execution_time;
 
   public CalculatorResponseDTO id(UUID id) {
     this.id = id;

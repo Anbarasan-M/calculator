@@ -5,12 +5,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity(name = "operations")
@@ -34,7 +36,8 @@ public class CalculationEntity {
     @Column(name="result")
     private Float result ;
 
+    @CreatedDate
     @Column(name = "execution_time")
-    private Timestamp execution_time;
+    private LocalDateTime execution_time;
     
 }

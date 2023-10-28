@@ -10,6 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -82,6 +83,7 @@ public class BasicCalculatorImpl implements CalculatorI
     @Override
     public CalculatorResponseDTO save(CalculatorResponseDTO calculatorResponse){
         CalculationEntity calculationEntity = calculationEntryMapper.toCalculationEntity(calculatorResponse);
+        calculationEntity.setExecution_time(LocalDateTime.now());
         calculatorResponse =
                 calculationEntryMapper.toCalculatorResponse( calculatorEntryRepository.save(calculationEntity));
        return calculatorResponse ;

@@ -84,8 +84,8 @@ public class CalculatorApiController implements CalculatorApi {
     }
 
     @Override
-    public ResponseEntity<List<CalculatorResponseDTO>> searchCalculationByPageAndSize(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
+    public ResponseEntity<List<CalculatorResponseDTO>> searchCalculationByPageAndSize(String page, String size) {
+        Pageable pageable = PageRequest.of(Integer.valueOf(page),Integer.valueOf(size));
 
         return new ResponseEntity<List<CalculatorResponseDTO>>(calculatorI.historyByPAge(pageable),HttpStatus.OK);
     }

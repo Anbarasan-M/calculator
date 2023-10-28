@@ -58,7 +58,7 @@ public interface CalculatorApi {
     @RequestMapping(value = "/calculator/page",
             produces = { "application/json" },
             method = RequestMethod.GET)
-    ResponseEntity<List<CalculatorResponseDTO>> searchCalculationByPageAndSize(@RequestParam("page") int page,@RequestParam("size") int size);
+    ResponseEntity<List<CalculatorResponseDTO>> searchCalculationByPageAndSize(@RequestParam("page") String page,@RequestParam("size") String size);
 
 
 
