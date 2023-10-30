@@ -56,7 +56,7 @@ public interface CalculatorApi {
 
             @ApiResponse(responseCode = "400", description = "bad input parameter") })
     @RequestMapping(value = "/calculator/page",
-            produces = { "application/json" },
+            produces = { "application/json"},
             method = RequestMethod.GET)
     ResponseEntity<List<CalculatorResponseDTO>> searchCalculationByPageAndSize(@RequestParam("page") String page,@RequestParam("size") String size);
 

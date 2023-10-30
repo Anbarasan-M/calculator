@@ -8,6 +8,9 @@ import lombok.Setter;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 
 /**
@@ -18,14 +21,19 @@ import javax.validation.constraints.Min;
 
 @Getter
 @Setter
-
 public class CalculatorRequestDTO {
+
+  @NotNull(message = "Should not be empty")
   @JsonProperty("data1")
   private Float data1 = null;
 
+  @NotNull(message = "Should not be empty")
   @JsonProperty("data2")
   private Float data2 = null;
 
+  @NotNull(message = "Should not be empty")
+  @Size(min=1)
+  @Pattern(regexp = "^[-+*/]$", message = "Should be a valid operator")
   @JsonProperty("operand")
   private String operand = null;
 
