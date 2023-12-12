@@ -29,7 +29,7 @@ public class BasicCalculatorImpl implements CalculatorI
                 id(UUID.randomUUID()).
                 data1(calculatorRequest.getData1()).
                 data2(calculatorRequest.getData2()).
-                operand(calculatorRequest.getOperand()).build();
+                operator(calculatorRequest.getOperator()).build();
 
         calculatorResponse.setResult(calculatorResponse.getData1()+calculatorResponse.getData2());
 
@@ -42,7 +42,7 @@ public class BasicCalculatorImpl implements CalculatorI
                 id(UUID.randomUUID()).
                 data1(calculatorRequest.getData1()).
                 data2(calculatorRequest.getData2()).
-                operand(calculatorRequest.getOperand()).build();
+                operator(calculatorRequest.getOperator()).build();
 
         calculatorResponse.setResult(calculatorResponse.getData1()-calculatorResponse.getData2());
 
@@ -55,7 +55,7 @@ public class BasicCalculatorImpl implements CalculatorI
                 id(UUID.randomUUID()).
                 data1(calculatorRequest.getData1()).
                 data2(calculatorRequest.getData2()).
-                operand(calculatorRequest.getOperand()).build();
+                operator(calculatorRequest.getOperator()).build();
 
         calculatorResponse.setResult(calculatorResponse.getData1() * calculatorResponse.getData2());
 
@@ -68,7 +68,7 @@ public class BasicCalculatorImpl implements CalculatorI
                 id(UUID.randomUUID()).
                 data1(calculatorRequest.getData1()).
                 data2(calculatorRequest.getData2()).
-                operand(calculatorRequest.getOperand()).build();
+                operator(calculatorRequest.getOperator()).build();
 
         calculatorResponse.setResult(calculatorResponse.getData1()/calculatorResponse.getData2());
 

@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.validation.annotation.Validated;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -35,21 +34,21 @@ public class CalculatorRequestDTO {
   @Size(min=1)
   @Pattern(regexp = "^[-+*/]$", message = "Should be a valid operator")
   @JsonProperty("operand")
-  private String operand = null;
+  private String operator = null;
 
   @Override
   public int hashCode() {
-    return Objects.hash(data1, data2, operand);
+    return Objects.hash(data1, data2, operator);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CalculatorRequest {\n");
-    
+
     sb.append("    data1: ").append(toIndentedString(data1)).append("\n");
     sb.append("    data2: ").append(toIndentedString(data2)).append("\n");
-    sb.append("    operand: ").append(toIndentedString(operand)).append("\n");
+    sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("}");
     return sb.toString();
   }

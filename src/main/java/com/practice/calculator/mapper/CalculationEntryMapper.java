@@ -14,14 +14,6 @@ import java.util.UUID;
 )
 public interface CalculationEntryMapper {
 
-
-
-//    //@Mapping(target = "id",source="id")
-//    @Mapping(target = "data1",source="data1")
-//    @Mapping(target = "data2",source="data2")
-//    @Mapping(target = "operand",source="operand")
-//    @Mapping(target = "result",source="result")
-
     CalculatorResponseDTO toCalculatorResponse(CalculationEntity calculationEntity);
 
     CalculationEntity toCalculationEntity(CalculatorResponseDTO calculatorResponse);

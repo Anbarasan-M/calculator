@@ -20,12 +20,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Objects;
 
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen", date = "2023-09-16T07:19:53.654363260Z[GMT]")
 @RestController
@@ -51,8 +47,8 @@ public class CalculatorApiController implements CalculatorApi {
 
         CalculatorResponseDTO response = null;
 
-        if (Objects.equals(body.getOperand(), "+") || Objects.equals(body.getOperand(), "-") || Objects.equals(body.getOperand(), "*") || Objects.equals(body.getOperand(), "/")) {
-            switch (body.getOperand()) {
+        if (Objects.equals(body.getOperator(), "+") || Objects.equals(body.getOperator(), "-") || Objects.equals(body.getOperator(), "*") || Objects.equals(body.getOperator(), "/")) {
+            switch (body.getOperator()) {
                 case "-":
                     response =   calculatorI.sub(body);
                     break;

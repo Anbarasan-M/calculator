@@ -1,17 +1,15 @@
 package com.practice.calculator.dto;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.UUID;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.validation.annotation.Validated;
+
+import java.time.LocalDateTime;
+import java.util.Objects;
+import java.util.UUID;
 
 
 /**
@@ -32,8 +30,8 @@ public class CalculatorResponseDTO {
   @JsonProperty("data2")
   private Float data2 ;
 
-  @JsonProperty("operand")
-  private String operand;
+  @JsonProperty("operator")
+  private String operator;
 
   @JsonProperty("result")
   private Float result;
@@ -58,7 +56,7 @@ public class CalculatorResponseDTO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, data1, data2, operand, result, execution_time);
+    return Objects.hash(id, data1, data2, operator, result, execution_time);
   }
 
   @Override
@@ -69,7 +67,7 @@ public class CalculatorResponseDTO {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    data1: ").append(toIndentedString(data1)).append("\n");
     sb.append("    data2: ").append(toIndentedString(data2)).append("\n");
-    sb.append("    operand: ").append(toIndentedString(operand)).append("\n");
+    sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("}");
     return sb.toString();
